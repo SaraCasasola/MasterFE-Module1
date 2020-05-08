@@ -1,0 +1,86 @@
+$base-bg-color-1: tomato;
+$base-bg-color-2: aqua;
+$base-bg-color-3: lightgreen;
+$base-color: white;
+$base-color-1: aqua;
+$base-color-2: grey;
+$base-color-3: darkgrey;
+
+@mixin colors($base-bg-color, $color-box-text) {
+    color: $color-box-text;
+
+    .lighten-1 {
+        background-color: lighten($base-bg-color, 3%);   
+    }
+
+    .lighten-2 {
+        background-color: lighten($base-bg-color, 8%);
+    }
+
+    .lighten-3 {
+        background-color: lighten($base-bg-color, 15%);
+    }
+
+    .lighten-4 {
+        background-color: lighten($base-bg-color, 20%);
+    }
+
+    .base-color {
+        flex: 2;
+        color: $base-color;
+        background-color: $base-bg-color;
+    }
+
+    .darken-1 {
+        background-color: darken($base-bg-color, 3%);
+    }
+
+    .darken-2 {
+        background-color: darken($base-bg-color, 8%);
+    }
+
+    .darken-3 {
+        background-color: darken($base-bg-color, 15%);
+    }
+
+    .darken-4 {
+        background-color: darken($base-bg-color, 20%);
+    }
+}
+
+ 
+.container {
+    margin-bottom: 5px;
+    display: flex;
+
+    .box {
+        height: 65px;
+        margin-left: 5px;
+        margin-right: 5px;
+        display: flex;
+        flex: 1;         
+        justify-content: center;
+        align-items: center;
+        border-radius: 4%;    
+
+        &:first-child {
+            margin-left: 0;
+        }  
+
+        &:last-child {
+            margin-right: 0;
+        }  
+    }
+
+    &:first-child {
+        @include colors($base-bg-color-1, $base-color-1);        
+    }
+
+    &:nth-child(2) {
+        @include colors($base-bg-color-2, $base-color-2);
+    }
+
+    &:last-child {
+        @include colors($base-bg-color-3, $base-color-3);
+    }
+}
