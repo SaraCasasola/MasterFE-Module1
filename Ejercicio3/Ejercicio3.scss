@@ -1,0 +1,70 @@
+$base-bg-color: darkcyan;
+$active-bg-color: cadetblue;
+$base-color: white;
+$device-breakpoint: 768px; /*Medium devices (landscape tablets, 768px and up)*/
+
+.menu {
+    padding: 8px 15px 100px 15px;
+    border: black 8px solid;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    @media only screen and (min-width: $device-breakpoint) {
+        padding: 5px 10px;
+        border: none;
+    }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @media only screen and (min-width: $device-breakpoint) {
+            flex-direction: row;
+        }
+        color: $base-color;        
+    }
+
+    &__item {
+        padding: 5px;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $base-bg-color;
+        cursor: pointer;
+
+        &:first-child {
+            background-color: $active-bg-color;
+            @media only screen and (min-width: $device-breakpoint) {                
+                flex: 2;
+                justify-content: flex-start;
+                background-color: $base-bg-color;
+            }
+        }
+
+        &:nth-child(2) {
+            @media only screen and (min-width: $device-breakpoint) {                
+                flex: 2;
+                justify-content: flex-start;
+            }
+        }
+
+        &:nth-child(3) {
+            @media only screen and (min-width: $device-breakpoint) {
+                flex: 1;
+                background-color: $active-bg-color;
+            }
+        }
+
+        &:last-child{
+            @media only screen and (min-width: $device-breakpoint) {
+                flex: 3;
+                justify-content: flex-end;
+            }
+        }
+
+        &:hover {
+            background-color: $active-bg-color;
+        }
+    }
+}
