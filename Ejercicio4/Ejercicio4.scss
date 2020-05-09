@@ -1,0 +1,59 @@
+.container {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 20px;
+    background: gainsboro;
+
+    .card {    
+        display: grid;
+        grid-template-areas: 'cardImage' 'cardImage' 'cardContent';
+        background: white;
+        border: black 1px solid;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        &__image-container {
+            grid-area: cardImage;  
+            &-image { 
+                width: 100%;     
+            }        
+        }        
+
+        &__content {
+            grid-area: cardContent;
+            padding: 15px;
+            padding-top: 0;
+            font-size: 0.9rem;
+
+            &-title {
+                font-weight: normal;
+            }
+    
+            &-info {
+                margin-top: 25px;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: right;
+
+                &--highligth {
+                    font-weight: normal;
+                    color: yellowgreen;
+                }
+            } 
+    
+            &-button {
+                width: 100%;
+                padding: 15px;
+                background-color: yellowgreen;
+                color: white;
+                border: none;
+                font-size: 1.25rem;
+                cursor: pointer;
+    
+                &:focus {
+                    border: none;
+                    outline: none;
+                }
+            }
+        }        
+    }
+}
