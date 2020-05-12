@@ -1,0 +1,17 @@
+{
+  "name": "ejercicio1",
+  "version": "1.0.0",
+  "description": "ejercicio1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/ejercicio1.html",
+    "build": "parcel build src/ejercicio1.html"
+  },
+  "author": "Sara Casasola",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.5"
+  }
+}
